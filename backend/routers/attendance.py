@@ -11,7 +11,7 @@ import schemas
 router = APIRouter()
 
 
-@router.post("/", response_model=schemas.Attendance, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=schemas.Attendance, status_code=status.HTTP_201_CREATED)
 def mark_attendance(attendance: schemas.AttendanceCreate, db: Session = Depends(get_db)):
     """Mark attendance for an employee"""
     
@@ -51,7 +51,7 @@ def mark_attendance(attendance: schemas.AttendanceCreate, db: Session = Depends(
         )
 
 
-@router.get("/", response_model=List[schemas.AttendanceWithEmployee])
+@router.get("", response_model=List[schemas.AttendanceWithEmployee])
 def get_attendance_records(
     employee_id: Optional[int] = Query(None, description="Filter by employee ID"),
     date_from: Optional[date] = Query(None, description="Filter from date"),
