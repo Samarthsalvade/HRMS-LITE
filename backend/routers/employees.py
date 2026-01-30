@@ -11,7 +11,7 @@ import schemas
 router = APIRouter()
 
 
-@router.post("/", response_model=schemas.Employee, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=schemas.Employee, status_code=status.HTTP_201_CREATED)
 def create_employee(employee: schemas.EmployeeCreate, db: Session = Depends(get_db)):
     """Create a new employee"""
     
@@ -51,7 +51,7 @@ def create_employee(employee: schemas.EmployeeCreate, db: Session = Depends(get_
         )
 
 
-@router.get("/", response_model=List[schemas.EmployeeWithStats])
+@router.get("", response_model=List[schemas.EmployeeWithStats])
 def get_employees(db: Session = Depends(get_db)):
     """Get all employees with attendance statistics"""
     
