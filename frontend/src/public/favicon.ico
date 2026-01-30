@@ -1,0 +1,14 @@
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+
+app = FastAPI()
+
+# Mount a folder for static files
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Place your favicon.ico in the `static` folder
+# Then you can link it to `/favicon.ico`
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return RedirectResponse(url="/static/favicon.ico")

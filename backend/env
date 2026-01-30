@@ -1,0 +1,4 @@
+DATABASE_URL=postgresql+psycopg2://hrms_lite_5s7l_user:CID17vppiTdyF9PRiRnt0RY2bSdR989X@dpg-d5u7h363jp1c73cn0dcg-a.singapore-postgres.render.com:5432/hrms_lite_5s7l?sslmode=require
+CORS_ORIGINS=http://localhost:3000,http://localhost:5173
+VITE_API_URL=http://localhost:8000
+
